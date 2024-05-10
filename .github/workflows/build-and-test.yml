@@ -68,7 +68,7 @@ jobs:
 
       - name: Run DeployQt
         working-directory: ${{ github.workspace }}/build
-        run: windeployqt l5rSheet.exe --qmldir=${{ github.workspace }}/qml
+        run: windeployqt Release\l5rSheet.exe --qmldir=${{ github.workspace }}/qml
 
       - name: Upload
         uses: actions/upload-artifact@v4
