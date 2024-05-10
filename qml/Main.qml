@@ -10,6 +10,7 @@ ApplicationWindow {
     width: 1300
     height: 1000
     visible: true
+    title: qsTr("L5R Sheet v4")
 
     property int counter: 0
     property bool aboutToScreenShot: false
