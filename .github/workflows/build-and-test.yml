@@ -74,7 +74,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: l5rSheet-windows
-          path: ${{ github.workspace }}/build/bin/
+          path: ${{ github.workspace }}/build/
 
   build-macos:
     runs-on: macos-latest
