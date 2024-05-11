@@ -36,7 +36,7 @@ jobs:
           wget -c -nv https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage -O linuxdeployqt-continuous-x86_64.AppImage
           chmod +x linuxdeployqt-continuous-x86_64.AppImage
           mkdir -p app/usr/bin
-          cp bin/game app/usr/bin/l5rSheet
+          cp bin/l5rSheet app/usr/bin/l5rSheet
           mkdir -p app/usr/share/icons/hicolor/256x256/apps
           cp ${{ github.workspace }}/resources/logo.png app/usr/share/icons/hicolor/256x256/apps/l5rSheet.png
           mkdir -p app/usr/share/applications
@@ -96,11 +96,10 @@ jobs:
       - name: Run DeployQt
         working-directory: ${{ github.workspace }}/build/bin
         run: |
-          mv game.app l5rSheet.app
           macdeployqt l5rSheet.app -qmldir=${{ github.workspace }}/qml -dmg -verbose=2
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: l5rSheet-macos
-          path: ${{ github.workspace }}/build/bin/l5rSheet.dmg
+          path: ${{ github.workspace }}/build/l5rSheet.dmg
